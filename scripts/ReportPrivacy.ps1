@@ -9,7 +9,7 @@ function Protect-ReportText {
     )
     process {
         # Withhold the entire command: unrecognised flags can also contain secrets.
-        $safe = $Text -replace '(?i)^(\s*(?:Command|Uninstall):\s*).*$', '$1[REDACTED command]'
+        $safe = $Text -replace '(?is)^(\s*(?:Command|Uninstall):\s*).*$', '$1[REDACTED command]'
         # Keep measurements separated by '=' or '|', withholding the complete path.
         $safe = $safe -replace '(?i)[a-z]:\\Users\\[^\\\s|=]+(?:\\[^|=\r\n]*)?', '[USER_PATH]'
         foreach ($privateRoot in $PrivateRoots) {

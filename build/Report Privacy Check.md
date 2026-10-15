@@ -23,4 +23,7 @@ read the registry, inspect user folders, or run an audit.
 The existing tracked ZIP predates this change. It must not be presented as the
 privacy-fixed download. Reproducible packaging from the reviewed source commit,
 a pinned source tag, archive hash and extracted-content verification remain a
-separate release gate. No field test, sale readiness or publication is claimed.
+separate release gate. A local tagged-source candidate has now been verified;
+see `Candidate Archive Manifest.md` for the pinned commit, reproducible command
+and hash. Public release tagging/delivery remains held. No field test, sale
+readiness or publication is claimed.

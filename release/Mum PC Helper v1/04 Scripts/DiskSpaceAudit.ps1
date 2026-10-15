@@ -1,3 +1,4 @@
+﻿. (Join-Path $PSScriptRoot 'ReportPrivacy.ps1')
 $desktop = [Environment]::GetFolderPath('Desktop')
 $reportPath = Join-Path $desktop 'disk-space-audit.txt'
 $userProfile = [Environment]::GetFolderPath('UserProfile')
@@ -46,5 +47,5 @@ foreach ($folder in $foldersToCheck) {
     $lines += ('{0} = {1}' -f $folder, $size)
 }
 
-$lines | Out-File -FilePath $reportPath -Encoding UTF8
+$lines | Protect-ReportText | Out-File -FilePath $reportPath -Encoding UTF8
 Write-Host 'Audit complete. Report saved to:' $reportPath

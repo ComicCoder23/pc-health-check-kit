@@ -1,3 +1,4 @@
+﻿. (Join-Path $PSScriptRoot 'ReportPrivacy.ps1')
 $desktop = [Environment]::GetFolderPath('Desktop')
 $reportPath = Join-Path $desktop 'large-files-report.txt'
 $userProfile = [Environment]::GetFolderPath('UserProfile')
@@ -41,5 +42,5 @@ $lines += '- Large installers and archives may be easier wins'
 $lines += '- Unknown large files should be noted, not deleted automatically'
 $lines += '- Use this report alongside Disk Space Audit and Downloads Audit'
 
-$lines | Out-File -FilePath $reportPath -Encoding UTF8
+$lines | Protect-ReportText | Out-File -FilePath $reportPath -Encoding UTF8
 Write-Host 'Large file scan complete. Report saved to:' $reportPath

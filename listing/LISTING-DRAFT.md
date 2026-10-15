@@ -4,11 +4,11 @@ Draft shop listing for review. This is not an offer to sell, and it is not publi
 
 PC Health Check Kit is a short set of plain-English notes and five read-only PowerShell checks for a slow or cluttered home Windows PC.
 
-**What you pay for:** You pay for a packaged folder of plain-English visit guides, safety notes and the five audit scripts in their locked run order, and the same scripts stay free and public on GitHub.
+**What you pay for:** You pay for a packaged visit kit: plain-English guides, safety notes, and the five audit scripts in their locked run order, with a report privacy helper kept beside the scripts. The scripts stay free on GitHub. The paid pack is that packaged folder.
 
-The free scripts, and the same packaged zip, are already public at https://github.com/ComicCoder23/pc-health-check-kit (the zip is `release/Mum-PC-Helper-v1.zip`). A shop download is that folder. The free copy stays up.
+The free scripts are public at https://github.com/ComicCoder23/pc-health-check-kit. The only zip on the public main branch is an older pack. It is stale. It is the earlier set of guides and five scripts, and it is not the copy for sale.
 
-The public name is PC Health Check Kit. Inside the folder the files still use the old name, Mum PC Helper.
+The sale candidate is a local archive named `PC-Health-Check-Kit-candidate-a.zip`. Its SHA256 is `edac0ccd1a29df711fc4e506fff26f85242e03605158e01e78aa63c33db22b8b`. It holds 21 files, including the report privacy helper and the guides listed below. It was packed from commit `4c5db62243449b568aa2bc77c0a6782b023ad2f5` (pull request #7). A local tag, `pc-kit-candidate-20261016-4c5db62`, points at that commit and has not been pushed. The archive sits in a private studio cache. There is no public download address for it yet.
 
 ## Who it is for
 
@@ -16,21 +16,37 @@ For a first careful look at a home or family Windows PC, by someone the owner ha
 
 The user guide says it is a guided first pass. It also says it is not a deep repair suite, not an aggressive cleanup tool, not a malware removal toolkit, and not a promise to fix every problem in one visit.
 
-Some pages still say "Mum", because the file names have not been renamed yet. Read that as the person who uses the PC.
-
 ## What you get in the download
 
-The folder is `Mum PC Helper v1`, also packed as `Mum-PC-Helper-v1.zip`.
+The candidate archive above is the pack for sale. It is 21 files.
 
+Inside that download, the folder and the guide file names still use an older title, Mum PC Helper. `Version.txt` records that same title at version 1.0 and says the scripts are audit-only. The stale zip on the public main branch uses that older name too: `release/Mum-PC-Helper-v1.zip`. Where a page says "Mum", read that as the person who uses the PC.
+
+Guides in the candidate:
+
+- Master Index
 - Start Here
 - Quick Run Card
 - Visit Workflow One Pager
 - Action Decision Tree
-- User Guide
 - Safety Notes
-- Five PowerShell scripts, in `04 Scripts`
-- Script notes, including how to run a script and the safety boundary
-- `Version.txt` (it says Mum PC Helper v1.0, scripts audit-only)
+- User Guide
+- First Visit Checklist
+- What To Ask Mum (a question list for the person who uses the PC)
+- Session Notes (a blank visit log)
+- Results Interpretation Guide (how to read the reports)
+- Browser Triage Guide
+
+Scripts, in `04 Scripts`:
+
+- `DiskSpaceAudit.ps1`
+- `DownloadsAudit.ps1`
+- `LargeFilesFinder.ps1`
+- `InstalledProgramsExport.ps1`
+- `StartupItemsReview.ps1`
+- `ReportPrivacy.ps1` (filters report text; the five checks load it; it is not a separate visit check and it does not inspect the PC)
+
+Also included: script notes (how to run a script, and the safety boundary) and `Version.txt`.
 
 A short visit, as the Quick Run Card and the user guide describe it:
 
@@ -46,7 +62,7 @@ That tidying is manual. The scripts do not do it. The safety rule in the notes i
 
 ## What it does / What it never does
 
-Each script reads, then writes one plain text report on the Desktop, and stops.
+Each script reads, then writes one plain text report on the Desktop, and stops. The five checks pass that text through `ReportPrivacy.ps1` before the report is saved.
 
 | Order | Script | Report on the Desktop | What it reads |
 |---|---|---|---|
@@ -65,7 +81,9 @@ The safety notes say the scripts do not:
 - touch Windows system folders
 - run as administrator unless you explicitly do so
 
-Reading the five scripts matches that list. They also contain no rename, no web or network call, and no read of passwords or saved credentials. The report is a text file on that PC's Desktop. Nothing in the scripts sends it anywhere.
+Reading the five scripts and `ReportPrivacy.ps1` matches that list. They also contain no rename, no web or network call, and no read of passwords or saved credentials. The report is a text file on that PC's Desktop. Nothing in the scripts sends it anywhere.
+
+The filter withholds uninstall and command lines, replaces known user-folder paths, and redacts labelled secrets such as passwords and tokens. A report is not anonymous. File names, software names, custom paths and unlabelled text can still identify the person or the PC. Read the report before you share it.
 
 If a script asks for administrator access you did not expect, do not approve it. Close it and check the file matches the copy in this folder.
 
@@ -86,18 +104,16 @@ Closing the window clears that change.
 
 The repository does not state a minimum Windows version or a minimum PowerShell version.
 
-## In the public repo, not in the packaged folder
+## Still only in the repository
 
-These notes exist in the repository. They are not inside the zip. The Quick Run Card and the visit workflow still tell you to open some of them.
+These build notes are not inside the candidate archive. The visit order they describe is already written in the Master Index, Start Here, the Quick Run Card and the script notes.
 
-- Master Index
-- First Visit Checklist
-- What To Ask Mum (a fuller question list; shorter questions are already in the user guide and the visit workflow)
-- Session Notes (a blank visit log)
-- Results Interpretation Guide (how to read the reports)
-- Run Order for Scripts (the same order is already written in Start Here, the Quick Run Card and the script notes)
-- Browser Triage Guide
-- Cleanup Order, Safe Tools List, Safe Scripts Plan, and the other build notes
+- Run Order for Scripts
+- Cleanup Order
+- Safe Tools List
+- Safe Scripts Plan
+- Canonical Product Structure
+- The other build notes (per-script write-ups, the product naming rule, the pack definition, the report privacy check, and the candidate archive manifest)
 
 ## Planned, not yet included
 
@@ -125,25 +141,37 @@ Do not publish this page until those three lines are filled in and a reviewer ha
 
 ## Reviewer notes (not shop copy)
 
-Check 4 draft for BOX-01. Nobody should merge, publish, tag or list this from this file alone.
+Check 5 refresh for BOX-01. Draft only. Nobody should merge, publish, tag or list this from this file alone.
+
+This text follows the privacy-fixed candidate on pull request #7 (`codex/report-privacy-20261015`), source commit `4c5db62243449b568aa2bc77c0a6782b023ad2f5`, local unpushed tag `pc-kit-candidate-20261016-4c5db62`. Archive name `PC-Health-Check-Kit-candidate-a.zip`. SHA256 `edac0ccd1a29df711fc4e506fff26f85242e03605158e01e78aa63c33db22b8b`. Evidence is `build/Candidate Archive Manifest.md` on that branch. The archive is local only. No public download URL is claimed.
+
+That candidate supersedes the 15-file archive at `70a702e` (SHA256 `b9543c01c5b6553362f6ad842f015d8d76c96f095e03d370a1f81d4f995c5ff0`) and the 21-file archive at `152aa68` (SHA256 `47e768b050ec520f87eea66125702a2b80b8df4f6e36ba146f831f26cd0dfe18`).
+
+`release/Mum-PC-Helper-v1.zip` on `master` is unchanged and stale. Its contents are the older guides and five scripts. It has no `ReportPrivacy.ps1` and none of the six guides added in the candidate. It is not the paid candidate.
+
+The six guides now inside the candidate, and absent from the master zip, are Master Index, First Visit Checklist, What To Ask Mum, Session Notes, Results Interpretation Guide, and Browser Triage Guide. Run Order for Scripts remains under `build/` only. `build/Mum PC Helper - V1 Product Pack Definition.md` still lists those six guides under "WHAT STAYS OUT OF THE V1 PRODUCT"; the candidate tree is ahead of that note.
 
 Claim sources:
 
-| Listing claim | Repo files |
+| Listing claim | Where it was checked |
 |---|---|
-| Public name PC Health Check Kit; files still say Mum PC Helper; zip path | `README.md`, `release/Mum PC Helper v1/Version.txt` |
-| Packaged folder and zip contents | `release/Mum PC Helper v1/` and `release/Mum-PC-Helper-v1.zip` |
-| Scripts stay free; GitHub is the script source | `README.md`, `docs/index.html`, `release/Mum PC Helper v1/01 Start Here/Mum PC Helper - Start Here.md` |
-| Who it is for, and what it is not | `release/Mum PC Helper v1/01 Start Here/Mum PC Helper - Start Here.md`, `release/Mum PC Helper v1/03 User Guide/Mum PC Helper - User Guide.md`, `README.md` (use on machines you are invited to support) |
-| Visit steps and locked order | `release/Mum PC Helper v1/02 Quick Guides/Mum PC Helper - Quick Run Card.md`, `release/Mum PC Helper v1/02 Quick Guides/Mum PC Helper - Visit Workflow One Pager.md`, `release/Mum PC Helper v1/05 Script Notes/README.md`, `release/Mum PC Helper v1/05 Script Notes/Safety-Notes.txt` |
-| What each script reads, and the report file name | `scripts/DiskSpaceAudit.ps1`, `scripts/DownloadsAudit.ps1`, `scripts/LargeFilesFinder.ps1`, `scripts/InstalledProgramsExport.ps1`, `scripts/StartupItemsReview.ps1` (the copies under `release/Mum PC Helper v1/04 Scripts/` match these) |
-| What the scripts must not do; unexpected admin prompt; execution-policy command | `scripts/Safety-Notes.txt` and `release/Mum PC Helper v1/05 Script Notes/Safety-Notes.txt` |
-| No rename, no network, no credential read | The five `.ps1` files above (those calls are not in them) |
+| Public name is PC Health Check Kit; older folder title appears once, later | `README.md`; candidate `release/Mum PC Helper v1/Version.txt` at `4c5db62` |
+| Sale candidate name, SHA256, 21 files, local unpushed tag, no public URL | `build/Candidate Archive Manifest.md` on pull request #7; release tree at `4c5db62243449b568aa2bc77c0a6782b023ad2f5` |
+| Earlier candidate hashes are superseded | Same manifest (15-file `b9543c01…` at `70a702e`; 21-file `47e768b0…` at `152aa68`) |
+| Public main-branch zip is the stale older pack | `release/Mum-PC-Helper-v1.zip` on `master` (file list: original guides and five scripts only) |
+| Scripts stay free; GitHub is the script source | `README.md`, `docs/index.html`, candidate Start Here |
+| Guides and helper inside the candidate | `git ls-tree` of `release/Mum PC Helper v1/` at `4c5db62` (21 files, listed in the shop section) |
+| Who it is for, and what it is not | Candidate Start Here, candidate User Guide, `README.md` |
+| Visit steps and locked order | Candidate Quick Run Card, Visit Workflow One Pager, script-notes README, Safety-Notes.txt, Master Index |
+| What each script reads, and the report file name | The five audit `.ps1` files at `4c5db62` (repo `scripts/` and `release/.../04 Scripts/`) |
+| Report filter: commands, paths, labelled secrets; reports can still identify | `ReportPrivacy.ps1` at `4c5db62` (`Protect-ReportText`); candidate Master Index line on reviewing reports before sharing |
+| What the scripts must not do; unexpected admin prompt; execution-policy command | `scripts/Safety-Notes.txt` and the candidate script notes |
+| No rename, no network, no credential read | The five audit scripts and `ReportPrivacy.ps1` at `4c5db62` |
 | Run as the logged-in user | `README.md` |
 | PowerShell is built into Windows | `build/Mum PC Helper - Safe Scripts Plan.md` |
 | No minimum Windows or PowerShell version is stated | No file in the repo states one |
-| Manual cleanup rules, including passwords and system folders | `release/Mum PC Helper v1/02 Quick Guides/Mum PC Helper - Safety Notes.md` |
-| Notes that exist but are outside the zip | `build/` (see `build/Mum PC Helper - V1 Product Pack Definition.md`, section "WHAT STAYS OUT OF THE V1 PRODUCT") |
+| Manual cleanup rules, including passwords and system folders | Candidate Safety Notes |
+| Notes that remain outside the candidate | `build/` files not present under `release/Mum PC Helper v1/` at `4c5db62`, including Run Order for Scripts |
 | Browser helper script, printable PDF, one-click launcher are later work | `AGENTS.md` (parked items) |
 | Not yet run on another PC | `README.md` |
-| Price, EULA and support line | Placeholders only. No `LICENSE` file was added or changed |
+| Price, EULA and support line | Placeholders only. No licence file was added or changed |

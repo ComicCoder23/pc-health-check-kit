@@ -8,7 +8,7 @@ PC Health Check Kit is a short set of plain-English notes and five read-only Pow
 
 The free scripts are public at https://github.com/ComicCoder23/pc-health-check-kit. The only zip on the public main branch is an older pack. It is stale. It is the earlier set of guides and five scripts, and it is not the copy for sale.
 
-The sale candidate is a local archive named `PC-Health-Check-Kit-candidate-a.zip`. Its SHA256 is `edac0ccd1a29df711fc4e506fff26f85242e03605158e01e78aa63c33db22b8b`. It holds 21 files, including the report privacy helper and the guides listed below. It was packed from commit `4c5db62243449b568aa2bc77c0a6782b023ad2f5` (pull request #7). A local tag, `pc-kit-candidate-20261016-4c5db62`, points at that commit and has not been pushed. The archive sits in a private studio cache. There is no public download address for it yet.
+The sale candidate is a private archive named `PC-Health-Check-Kit-CANDIDATE-4c5db62.zip`. Its SHA256 is `edac0ccd1a29df711fc4e506fff26f85242e03605158e01e78aa63c33db22b8b`. It holds 21 files, including the report privacy helper and the guides listed below. It was packed from commit `4c5db62243449b568aa2bc77c0a6782b023ad2f5` (pull request #7). A local tag, `pc-kit-candidate-20261016-4c5db62`, points at that commit and has not been pushed. The archive is about 23986 bytes. A private owner-only Google Drive link exists for Alan/BOX-01 tap-1 prep: https://drive.google.com/file/d/1hqhNxqjELB5UrEJSXnZUmXu1D6dDG8cv/view. Sharing on that file is off (shared=false). It is not a public shop URL, and it is not a buyer checkout download.
 
 ## Who it is for
 
@@ -143,7 +143,7 @@ Do not publish this page until those three lines are filled in and a reviewer ha
 
 Check 5 refresh for BOX-01. Draft only. Nobody should merge, publish, tag or list this from this file alone.
 
-This text follows the privacy-fixed candidate on pull request #7 (`codex/report-privacy-20261015`), source commit `4c5db62243449b568aa2bc77c0a6782b023ad2f5`, local unpushed tag `pc-kit-candidate-20261016-4c5db62`. Archive name `PC-Health-Check-Kit-candidate-a.zip`. SHA256 `edac0ccd1a29df711fc4e506fff26f85242e03605158e01e78aa63c33db22b8b`. Evidence is `build/Candidate Archive Manifest.md` on that branch. The archive is local only. No public download URL is claimed.
+This text follows the privacy-fixed candidate on pull request #7 (`codex/report-privacy-20261015`), source commit `4c5db62243449b568aa2bc77c0a6782b023ad2f5`, local unpushed tag `pc-kit-candidate-20261016-4c5db62`. Archive name `PC-Health-Check-Kit-CANDIDATE-4c5db62.zip`. SHA256 `edac0ccd1a29df711fc4e506fff26f85242e03605158e01e78aa63c33db22b8b`. The archive is about 23986 bytes. A private owner-only Google Drive link exists for Alan/BOX-01 tap-1 prep: https://drive.google.com/file/d/1hqhNxqjELB5UrEJSXnZUmXu1D6dDG8cv/view. Sharing on that file is off (shared=false). It is not a public shop URL, and it is not a buyer checkout download. Evidence for the hash, the 21 files and the tag is `build/Candidate Archive Manifest.md` on that branch. The archive file name and the Drive link come from the Codex handoff on AI_Control_Tower#27, comment 6204276790.
 
 That candidate supersedes the 15-file archive at `70a702e` (SHA256 `b9543c01c5b6553362f6ad842f015d8d76c96f095e03d370a1f81d4f995c5ff0`) and the 21-file archive at `152aa68` (SHA256 `47e768b050ec520f87eea66125702a2b80b8df4f6e36ba146f831f26cd0dfe18`).
 
@@ -156,7 +156,7 @@ Claim sources:
 | Listing claim | Where it was checked |
 |---|---|
 | Public name is PC Health Check Kit; older folder title appears once, later | `README.md`; candidate `release/Mum PC Helper v1/Version.txt` at `4c5db62` |
-| Sale candidate name, SHA256, 21 files, local unpushed tag, no public URL | `build/Candidate Archive Manifest.md` on pull request #7; release tree at `4c5db62243449b568aa2bc77c0a6782b023ad2f5` |
+| Sale candidate name, SHA256, 21 files, local unpushed tag, private owner-only Drive link (shared=false, not a public shop URL) | Hash, file count and tag: `build/Candidate Archive Manifest.md` on pull request #7; release tree at `4c5db62243449b568aa2bc77c0a6782b023ad2f5`. File name and Drive link: Codex handoff, AI_Control_Tower#27 comment 6204276790 |
 | Earlier candidate hashes are superseded | Same manifest (15-file `b9543c01…` at `70a702e`; 21-file `47e768b0…` at `152aa68`) |
 | Public main-branch zip is the stale older pack | `release/Mum-PC-Helper-v1.zip` on `master` (file list: original guides and five scripts only) |
 | Scripts stay free; GitHub is the script source | `README.md`, `docs/index.html`, candidate Start Here |

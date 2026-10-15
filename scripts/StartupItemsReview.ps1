@@ -1,3 +1,4 @@
+﻿. (Join-Path $PSScriptRoot 'ReportPrivacy.ps1')
 $desktop = [Environment]::GetFolderPath('Desktop')
 $reportPath = Join-Path $desktop 'startup-items-review.txt'
 
@@ -76,5 +77,5 @@ $lines += '- Is it essential every time the PC starts?'
 $lines += '- Is it printer, security, sound, or system related?'
 $lines += '- If unsure, leave it enabled for now.'
 
-$lines | Out-File -FilePath $reportPath -Encoding UTF8
+$lines | Protect-ReportText | Out-File -FilePath $reportPath -Encoding UTF8
 Write-Host 'Review complete. Report saved to:' $reportPath

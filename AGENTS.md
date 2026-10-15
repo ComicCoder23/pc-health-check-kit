@@ -1,14 +1,14 @@
-# AGENTS.md — Mum PC Helper
-# Last updated: 2026-10-10 | Remote: https://github.com/ComicCoder23/mums-pc-helper
+# AGENTS.md — PC Health Check Kit (formerly Mum PC Helper)
+# Last updated: 2026-10-15 | Remote: https://github.com/ComicCoder23/pc-health-check-kit
 
 ---
 
 ## Project
 
-**Name:** Mum PC Helper
+**Name:** PC Health Check Kit (renamed from Mum PC Helper, Alan, 15 Oct 2026)
 **Purpose:** Guided Windows PC support kit for non-technical users. A structured field kit for safely maintaining and cleaning up a home PC. Designed for confident helpers visiting family/friends — covers what to ask, what to clean, which scripts to run, how to read results, and how to log the visit.
 **Canonical path (Old Boot):** `/home/alan82/builds/mums-pc-helper`
-**GitHub remote:** `ComicCoder23/mums-pc-helper` (live — v1.0 zip committed)
+**GitHub remote:** `ComicCoder23/pc-health-check-kit` (renamed from `mums-pc-helper` on 15 Oct 2026)
 **Build %:** 90%
 
 ---
@@ -56,9 +56,10 @@ node tools/verify-packaging.mjs
 - SAFETY RULE: PowerShell scripts in this pack are designed for deployment on non-technical users' Windows machines. Agents must NEVER execute them in bulk without Alan's explicit approval. Always read-only inspect first.
 - Scripts are audit-only: they read folder sizes, read registry values, and write one plain text report to the Desktop. They do not delete, move, or modify anything. If a script asks for unexpected admin access, stop and alert Alan.
 - Never push directly to `main`/`master` without approval. Branch + PR by default.
-- GitHub (`ComicCoder23/mums-pc-helper`) is the source of truth — run `git pull` before any write.
+- GitHub (`ComicCoder23/pc-health-check-kit`) is the source of truth — run `git pull` before any write.
 - Keep the downloadable pack under `release/Mum PC Helper v1/` and `release/Mum-PC-Helper-v1.zip`. Do not revive `PC Helper v1` / `PC-Helper-v1` package names.
-- Canonical public product name is **Mum PC Helper** (locked for v1).
+- ~~Canonical public product name is **Mum PC Helper** (locked for v1).~~ **Public name is now PC Health Check Kit** (Alan, 15 Oct 2026, CV link work order). The pack's file names keep the old name for now, so `tools/verify-packaging.mjs` still passes.
+- Public wording rules (Alan, 15 Oct): plain UK English, no "field kit", "Tier A", "v1.0 field kit" or "real support kit, not a demo app". Never claim the kit has been run on another PC (it hasn't), a paid IT job or ticket work.
 - Alan's real name must never appear in commits, release files, or public content.
 - Locked script order: DiskSpace → Downloads → optional LargeFiles / Programs / Startup.
 

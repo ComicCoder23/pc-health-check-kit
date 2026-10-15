@@ -11,6 +11,12 @@ Review candidate only. Not a published release or approved shop download.
 - SHA256: `edac0ccd1a29df711fc4e506fff26f85242e03605158e01e78aa63c33db22b8b`.
 - Toolchain: Git `2.53.0.windows.2`; verification Python `3.11.15`.
 
+A private review copy named `PC-Health-Check-Kit-CANDIDATE-4c5db62.zip`
+is stored in the existing Drive assets folder. Metadata readback confirms23,986
+bytes, owner-only permissions and no public sharing. A fresh download from Drive
+has the identical SHA256 above. The review link is in the internal Council
+handoff; this is not a public or approved shop download.
+
 Rebuild in a checkout containing the pinned commit and the local candidate tag:
 
 ```powershell

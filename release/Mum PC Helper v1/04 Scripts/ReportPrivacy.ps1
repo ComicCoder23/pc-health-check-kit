@@ -10,14 +10,15 @@ function Protect-ReportText {
     process {
         # Withhold the entire command: unrecognised flags can also contain secrets.
         $safe = $Text -replace '(?is)^(\s*(?:Command|Uninstall):\s*).*$', '$1[REDACTED command]'
-        # Keep measurements separated by '=' or '|', withholding the complete path.
-        $safe = $safe -replace '(?i)[a-z]:\\Users\\[^\\\s|=]+(?:\\[^|=\r\n]*)?', '[USER_PATH]'
+        # Match known profile roots first, including spaces or '=' in their names.
         foreach ($privateRoot in $PrivateRoots) {
             if (-not [string]::IsNullOrWhiteSpace($privateRoot)) {
                 $pattern = '(?i)' + [regex]::Escape($privateRoot.TrimEnd('\')) + '(?=\\|\s|$)(?:\\[^|=\r\n]*)?'
                 $safe = $safe -replace $pattern, '[USER_PATH]'
             }
         }
+        # Keep measurements separated by '=' or '|', withholding the complete path.
+        $safe = $safe -replace '(?i)[a-z]:\\Users\\[^\\|=\r\n]+(?:\\[^|=\r\n]*)?', '[USER_PATH]'
         # Defensive filtering for labelled secrets outside the withheld command fields.
         $safe = $safe -replace '(?i)(\b(?:api[_-]?key|access[_-]?token|refresh[_-]?token|token|password|client[_-]?secret|authorization)\s*[:=]\s*).*$', '$1[REDACTED]'
         $safe = $safe -replace '(?i)\bBearer\s+\S+', 'Bearer [REDACTED]'

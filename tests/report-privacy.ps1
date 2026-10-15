@@ -15,13 +15,15 @@ $inputLines = @(
     "Authorization: Bearer $fixtureToken",
     ('Command: app.exe --config="' + $fixturePath + '" --secret="' + $fixtureToken + '"'),
     'c:\USERS\FixturePerson\Desktop\file.txt | 14 MB',
+    'Path: C:\Users\Fixture Full Name\Documents\private.txt',
+    'Path: C:\Users\Fixture=Name\Documents\private.txt',
     "Command: app.exe`n--unknown-secret MULTILINE_COMMAND_SECRET",
     "Uninstall: app.exe`r`n/private MULTILINE_UNINSTALL_SECRET",
     'Drive C: Free 10 GB / Total 20 GB'
 )
-$result = ($inputLines | Protect-ReportText -PrivateRoots @('D:\Profiles\FixturePerson')) -join "`n"
+$result = ($inputLines | Protect-ReportText -PrivateRoots @('D:\Profiles\FixturePerson', 'C:\Users\Fixture=Name')) -join "`n"
 foreach ($private in @($fixtureToken, $fixturePath, 'FixturePerson', 'unrecognised-secret',
-    'MULTILINE_COMMAND_SECRET', 'MULTILINE_UNINSTALL_SECRET')) {
+    'MULTILINE_COMMAND_SECRET', 'MULTILINE_UNINSTALL_SECRET', 'Fixture Full Name', 'Full Name\Documents', 'Fixture=Name')) {
     if ($result.Contains($private)) { throw 'Synthetic private value survived redaction' }
 }
 if (-not $result.Contains('Drive C: Free 10 GB / Total 20 GB')) { throw 'Safe audit measurements changed' }

@@ -1,26 +1,24 @@
-# Mum PC Helper
+# PC Health Check Kit
 
-**A safety-first Windows support field kit for non-technical home PCs.**
+I fixed my mum's slow PC by hand, then wrote read-only PowerShell checks so the same steps can be repeated safely. Not yet run on another PC.
 
-Guided checklists, audit-only PowerShell scripts, and a packaged v1 release pack — so a helper can arrive, ask the right questions, audit before cleaning, and leave clear notes for the next visit.
+It's a short checklist plus five PowerShell scripts that only look and report. Nothing gets deleted until you've seen the evidence, and the notes are there for whoever comes next.
 
-**Author:** [ComicCoder23](https://github.com/ComicCoder23) · **Status:** v1.0 field kit · **Live Pages:** [comiccoder23.github.io/mums-pc-helper](https://comiccoder23.github.io/mums-pc-helper/)
+**Author:** [ComicCoder23](https://github.com/ComicCoder23) · **Live page:** [comiccoder23.github.io/pc-health-check-kit](https://comiccoder23.github.io/pc-health-check-kit/)
 
 ---
 
-## Why this exists (hire-facing)
+## What it covers
 
-Mum PC Helper is Tier A proof for **1st-line / IT helpdesk** work:
-
-| Skill shown | How the pack proves it |
+| What | Where |
 |---|---|
-| Audit-first discipline | Scripts read and report only; clean comes after evidence |
-| Safe change control | Never touch system folders; obvious junk only; if unsure, leave it |
-| Structured visit workflow | Master Index → Quick Run Card → ask → audit → clean → session notes |
-| Clear documentation | Classified product / build / archive guides + one-page run card + decision tree |
-| PowerShell for support | Five read-only audit scripts with a fixed run order |
+| Check first, clean second | The scripts read and report only. Cleaning comes after |
+| Careful changes | Never touch system folders. Obvious junk only. If unsure, leave it |
+| A set order for each visit | Master Index → Quick Run Card → ask → check → clean → notes |
+| Notes | Product, build and archive guides, a one-page run card and a decision tree |
+| PowerShell | Five read-only scripts with a fixed run order |
 
-This is a real support kit, not a demo app. Recruiters can skim this README, open the [live landing](https://comiccoder23.github.io/mums-pc-helper/), and inspect `scripts/` plus [`release/Mum-PC-Helper-v1.zip`](release/Mum-PC-Helper-v1.zip).
+The scripts are in [`scripts/`](scripts/) and the whole pack is in [`release/Mum-PC-Helper-v1.zip`](release/Mum-PC-Helper-v1.zip). The files inside still use the kit's old name, Mum PC Helper.
 
 ---
 
@@ -53,7 +51,7 @@ Entry points:
 - `product/Mum PC Helper Pack — Start Here.md`
 - `build/Mum PC Helper - Master Index.md`
 - `product/Mum PC Helper - Quick Run Card.md`
-- Live landing: [comiccoder23.github.io/mums-pc-helper](https://comiccoder23.github.io/mums-pc-helper/)
+- Live page: [comiccoder23.github.io/pc-health-check-kit](https://comiccoder23.github.io/pc-health-check-kit/)
 
 ---
 
@@ -85,7 +83,7 @@ Run as the logged-in user. Do not approve unexpected admin prompts.
 | `scripts/` | Canonical audit-only PowerShell sources |
 | `release/Mum PC Helper v1/` | Packaged product folder |
 | `release/Mum-PC-Helper-v1.zip` | Downloadable v1 zip |
-| `docs/` | GitHub Pages hire landing |
+| `docs/` | The GitHub Pages page |
 
 ### Product sources (`product/`)
 - Pack Start Here · Start Here · Quick Run Card · Visit Workflow One Pager
@@ -101,9 +99,9 @@ Full v1 zip: [`release/Mum-PC-Helper-v1.zip`](release/Mum-PC-Helper-v1.zip) (Sta
 
 ---
 
-## Product name
+## Name
 
-Canonical public name: **Mum PC Helper** (locked for v1). Broader audience lives in the subtitle, not a second product name.
+Renamed from Mum PC Helper to **PC Health Check Kit** in October 2026. The pack's file names still use the old name.
 
 ---
 

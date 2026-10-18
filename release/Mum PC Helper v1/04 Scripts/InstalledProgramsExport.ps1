@@ -1,3 +1,4 @@
+﻿. (Join-Path $PSScriptRoot 'ReportPrivacy.ps1')
 $desktop = [Environment]::GetFolderPath('Desktop')
 $reportPath = Join-Path $desktop 'installed-programs-review.txt'
 
@@ -41,5 +42,5 @@ $lines += '- Was this installed with something else?'
 $lines += '- Is this printer, browser, security, or Windows related?'
 $lines += '- If unsure, leave it alone for now.'
 
-$lines | Out-File -FilePath $reportPath -Encoding UTF8
+$lines | Protect-ReportText | Out-File -FilePath $reportPath -Encoding UTF8
 Write-Host 'Export complete. Report saved to:' $reportPath

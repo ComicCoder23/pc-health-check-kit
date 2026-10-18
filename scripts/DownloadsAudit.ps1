@@ -1,3 +1,4 @@
+﻿. (Join-Path $PSScriptRoot 'ReportPrivacy.ps1')
 $desktop = [Environment]::GetFolderPath('Desktop')
 $downloads = [Environment]::GetFolderPath('UserProfile') + '\Downloads'
 $reportPath = Join-Path $desktop 'downloads-audit.txt'
@@ -15,7 +16,7 @@ $lines += ''
 
 if (-not (Test-Path $downloads)) {
     $lines += 'Downloads folder not found.'
-    $lines | Out-File -FilePath $reportPath -Encoding UTF8
+    $lines | Protect-ReportText | Out-File -FilePath $reportPath -Encoding UTF8
     Write-Host 'Audit complete. Report saved to:' $reportPath
     return
 }
@@ -59,5 +60,5 @@ $lines += '- Check zip files already extracted'
 $lines += '- Check large files you do not recognize'
 $lines += '- Leave uncertain files alone until reviewed'
 
-$lines | Out-File -FilePath $reportPath -Encoding UTF8
+$lines | Protect-ReportText | Out-File -FilePath $reportPath -Encoding UTF8
 Write-Host 'Audit complete. Report saved to:' $reportPath

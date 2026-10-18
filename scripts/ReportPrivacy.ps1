@@ -18,9 +18,12 @@ function Protect-ReportText {
             }
         }
         # Keep measurements separated by '=' or '|', withholding the complete path.
-        $safe = $safe -replace '(?i)[a-z]:\\Users\\[^\\|=\r\n]+(?:\\[^|=\r\n]*)?', '[USER_PATH]'
+        $safe = $safe -replace '(?i)[a-z]:[\\/]Users[\\/][^\\/|=\r\n]+(?:[\\/][^|=\r\n]*)?', '[USER_PATH]'
+        # UNC profile paths (\\server\Users\name\...).
+        $safe = $safe -replace '(?i)\\\\[^\\\s]+\\Users\\[^\\|=\r\n]+(?:\\[^|=\r\n]*)?', '[USER_PATH]'
         # Defensive filtering for labelled secrets outside the withheld command fields.
-        $safe = $safe -replace '(?i)(\b(?:api[_-]?key|access[_-]?token|refresh[_-]?token|token|password|client[_-]?secret|authorization)\s*[:=]\s*).*$', '$1[REDACTED]'
+        # (?m): a label on any line of a multi-line value, not only the last.
+        $safe = $safe -replace '(?im)(\b(?:api[_-]?key|access[_-]?token|refresh[_-]?token|token|password|passwd|pwd|secret|client[_-]?secret|authorization)\s*[:=]\s*).*$', '$1[REDACTED]'
         $safe = $safe -replace '(?i)\bBearer\s+\S+', 'Bearer [REDACTED]'
         $safe
     }

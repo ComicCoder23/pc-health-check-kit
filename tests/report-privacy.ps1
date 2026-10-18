@@ -31,6 +31,19 @@ if (-not $result.Contains('[REDACTED command]')) { throw 'Raw command fields mus
 if (-not $result.Contains('[USER_PATH]')) { throw 'User paths must be replaced' }
 if (-not $result.Contains('| 14 MB')) { throw 'Path filtering removed a file measurement' }
 if (-not $result.Contains('= 12 MB')) { throw 'Custom profile filtering removed a folder measurement' }
+# BOX-01 18 Oct (H25): hardening regressions, synthetic only.
+$hard = @(
+    "token: $fixtureToken`nnext line kept",
+    "secret: $fixtureToken",
+    "conn: server=x;pwd=$fixtureToken",
+    'Path: C:/Users/FixturePerson/Documents/x.txt',
+    'Path: \\STUDIO\Users\FixturePerson\Desktop'
+) | Protect-ReportText -PrivateRoots @()
+$hardText = $hard -join "`n"
+foreach ($private in @($fixtureToken, 'FixturePerson')) {
+    if ($hardText.Contains($private)) { throw 'Hardening case leaked a synthetic private value' }
+}
+if (-not $hardText.Contains('next line kept')) { throw 'Multi-line redaction removed the following line' }
 $plain = 'Installed program: Example Tool 1.0 (Example Publisher)'
 if (($plain | Protect-ReportText) -ne $plain) { throw 'Safe program metadata changed' }
 $helperTokens = $null; $helperErrors = $null

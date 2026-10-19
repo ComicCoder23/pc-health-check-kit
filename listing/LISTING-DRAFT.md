@@ -127,10 +127,10 @@ The Windows field test has not happened yet. This listing includes no testimonia
 
 Intended sale: United Kingdom, in pounds. The shop and the checkout page are not decided. This draft has no price figure and no checkout link.
 
-Price, in pounds: [PRICE: owner sets]
+Price, in pounds: £9
 
-The kit is sold under a proprietary EULA that is still in draft. [EULA: pending approval]
+The kit is sold by Gumroad as merchant of record and licensed under the PC Health Check Kit EULA.
 
-Support and refunds: [SUPPORT AND REFUNDS LINE: BOX-01 drafts]
+Support and refunds: Support: email **[SUPPORT EMAIL]** and we reply within 2 working days. Refunds: if it won't run on your Windows PC, or you're not happy, tell us within 14 days of buying and we'll refund you in full, no questions asked. This sits on top of your legal rights.
 
 Do not publish this page until those three lines are filled in and a reviewer has agreed the wording.

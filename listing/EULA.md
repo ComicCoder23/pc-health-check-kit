@@ -6,7 +6,7 @@
 
 ## What this is
 
-This agreement is between you and **[SELLER: trading name, and the address the law requires a UK seller to show. Alan to confirm]** ("we", "us"). It covers the paid download called **PC Health Check Kit** (the folder and zip called "Mum PC Helper v1" inside, the guides, the five PowerShell checks and the notes that come with them), called "the Kit" below.
+This agreement is between you and **Gray Hat Builds** (the licensor). You buy the download from **Gumroad, Inc.**, which sells it to you as merchant of record and handles payment, tax and refunds ("we", "us"). It covers the paid download called **PC Health Check Kit** (the folder and zip called "Mum PC Helper v1" inside, the guides, the five PowerShell checks and the notes that come with them), called "the Kit" below.
 
 By downloading or using the Kit you accept this agreement. If you don't agree, don't use it. If you paid and want out, see "Your money back".
 
@@ -31,7 +31,7 @@ The five scripts are also published free at https://github.com/ComicCoder23/pc-h
 
 Each script reads information from the PC and writes **one plain text report to the Desktop**. The scripts don't delete or move files, change settings or the registry, uninstall anything, or send anything over the internet. They don't ask for or read your passwords. Don't approve a script that asks for administrator access you weren't expecting.
 
-The reports can contain file names, folder names, program names and your Windows user name. **Look through a report before you share it with anyone.** The Kit tries to hide user names and long secret-looking strings in reports, but it can miss things. [CHECK against the final candidate before approval: keep this sentence only if the redaction fix (pck#7) is in the released zip.]
+The reports can contain file names, folder names, program names and your Windows user name. **Look through a report before you share it with anyone.** The Kit tries to hide user names and long secret-looking strings in reports, but it can miss things.
 
 ## Your responsibility
 
@@ -45,7 +45,7 @@ We are not responsible for losses we couldn't reasonably have foreseen, or for l
 
 ## Your money back
 
-See the Support and refunds line on the listing: **[REFUND TERMS: use the wording in SUPPORT-AND-REFUNDS.md once Alan approves it]**. It's on top of your legal rights, not instead of them.
+See the Support and refunds line on the listing: **if it won't run on your Windows PC, or you're not happy, tell us within 14 days of buying and we'll refund you in full, no questions asked**. It's on top of your legal rights, not instead of them.
 
 ## Our ownership
 
@@ -61,7 +61,7 @@ The law of Scotland applies. If you live in England, Wales or Northern Ireland y
 
 ## Contact
 
-**[SUPPORT EMAIL: Alan to choose an inbox he actually reads]**
+**[SUPPORT EMAIL]**
 
 *Version 0.1 draft, 16 October 2026.*
 

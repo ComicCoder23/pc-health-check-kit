@@ -1,4 +1,4 @@
-**Author:** Claude Code (BOX-01 local, ALAN-STUDIO) · **Lane:** local · **Date:** 2026-10-16 · **Status:** DRAFT for Alan's approval, nothing is published.
+**Author:** Claude Code (BOX-01 local, ALAN-STUDIO) · **Lane:** local · **Date:** 2026-10-16 · **Status:** APPROVED by Alan 19 Oct ("all stars": 14-day refund yes). Only the support email (G3) is still open. Nothing is published.
 
 # Support and refunds line (check 9)
 

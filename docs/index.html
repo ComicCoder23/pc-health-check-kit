@@ -127,8 +127,8 @@
       <div class="eyebrow">ComicCoder23</div>
       <h1>PC Health Check Kit</h1>
       <p class="lead">
-        I fixed my mum's slow PC by hand, then wrote read-only PowerShell checks so the same steps
-        can be repeated safely. Not yet run on another PC.
+        I fixed my mum's slow PC by hand, then wrote PowerShell checks that inspect and report without
+        changing existing files. The checks write plain-text reports to the Desktop. Not yet run on another PC.
       </p>
       <div class="actions">
         <a class="btn btn-primary" href="https://github.com/ComicCoder23/pc-health-check-kit">View on GitHub</a>
@@ -160,8 +160,8 @@
         </thead>
         <tbody>
           <tr><td>Change control</td><td>Audit → clean → recheck free space → session notes</td></tr>
-          <tr><td>Documentation</td><td>29 markdown guides, one-page run card, decision tree</td></tr>
-          <tr><td>PowerShell support</td><td>Five read-only audit scripts with a fixed run order</td></tr>
+          <tr><td>Documentation</td><td>Plain-language questions, a one-page run card, and a decision tree</td></tr>
+          <tr><td>PowerShell checks</td><td>Five audit scripts that read information and write reports without changing existing files</td></tr>
           <tr><td>User communication</td><td>“What To Ask Mum” + session logging for the next visit</td></tr>
         </tbody>
       </table>
@@ -178,7 +178,7 @@
           <tr><td>2</td><td>DownloadsAudit.ps1</td><td>Usual second — large/old downloads and installer clutter</td></tr>
           <tr><td>3</td><td>LargeFilesFinder.ps1</td><td>Only if space is still tight or unexplained</td></tr>
           <tr><td>4</td><td>InstalledProgramsExport.ps1</td><td>Only if apps review is needed</td></tr>
-          <tr><td>5</td><td>StartupItemsReview.ps1</td><td>Only if startup is still slow</td></tr>
+          <tr><td>5</td><td>StartupItemsReview.ps1</td><td>Only if startup is still sluggish</td></tr>
         </tbody>
       </table>
       <p class="note" style="margin-top:1rem">

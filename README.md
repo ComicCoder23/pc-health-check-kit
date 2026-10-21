@@ -1,6 +1,6 @@
 # PC Health Check Kit
 
-I fixed my mum's slow PC by hand, then wrote read-only PowerShell checks so the same steps can be repeated safely. Not yet run on another PC.
+I fixed my mum's slow PC by hand, then wrote PowerShell checks that inspect and report without changing existing files. The checks write plain-text reports to the Desktop. Not yet run on another PC.
 
 It's a short checklist plus five PowerShell scripts that only look and report. Nothing gets deleted until you've seen the evidence, and the notes are there for whoever comes next.
 

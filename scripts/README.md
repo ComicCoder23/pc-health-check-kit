@@ -1,6 +1,6 @@
-# Mum PC Helper — Script Bundle
+# PC Health Check Kit — PowerShell Scripts
 
-5 audit scripts for safe Windows PC maintenance. None of these delete, move, or modify anything. All output goes to a text file on the Desktop.
+Five audit scripts for Windows PC checks. They read system and user-folder information, then write a plain-text report to the Desktop. They do not delete, move, or modify existing user files.
 
 Use this run order every time. It matches `build/Mum PC Helper - Run Order for Scripts.md` and `product/Mum PC Helper - Quick Run Card.md`.
 
@@ -25,13 +25,14 @@ For most visits:
 
 ## How to run a script
 
-1. Right-click the .ps1 file → Run with PowerShell
-2. If blocked, open PowerShell and run: `Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass`
-3. Then run the script again in that same PowerShell window
-4. Find the report file on the Desktop
+1. Read `Safety-Notes.txt` and the relevant guide first.
+2. Run the `.ps1` file as the logged-in user, without administrator access.
+3. Find the plain-text report on the Desktop and review it before deciding on any manual cleanup.
+
+If Windows or an organisation's policy blocks a script, stop and check with the PC owner or administrator. Do not change execution policy to get around a block.
 
 ## Safety guarantee
 
-All scripts are read-only. They write one text file to the Desktop and exit. They do not touch system folders, the registry (except to read it), or any user files.
+The scripts do not change system settings or existing user files. They read folder sizes, file listings, and selected registry values, then write one report file to the Desktop. The report is a new file and should be handled with the PC owner's permission.
 
 Read `Safety-Notes.txt` in this folder and `product/Mum PC Helper - Safety Notes.md` before making any manual changes.
